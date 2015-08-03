@@ -1,10 +1,13 @@
 {
   "name": "simpleapp",
   "version": "0.0.0",
+  "engines": {
+    "node": "0.12.x"
+  },
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "bower && gulp"
+    "postinstall": "bower install && gulp"
   },
   "devDependencies": {
   },
