@@ -1,0 +1,23 @@
+<div class="scrollable" ng-controller="LoginController">
+  <div class="scrollable-content section">
+      <img class="center-block" height="50%" width="auto" src="/images/logo.png" />
+
+      <form ng-submit="signin()">
+
+        <div bs-panel title="">
+
+          <input bs-form-control type="text" ng-model="user.email" label="Email" label-class="col-xs-3 col-sm-2 col-lg-1" class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4" placeholder="Email" />
+          <input bs-form-control type="password" ng-model="user.password" label="Password" label-class="col-xs-3 col-sm-2 col-lg-1" class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4" placeholder="Password" />
+          <button type="submit" id="btnSignIn" class="btn btn-primary col-xs-12 col-sm-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4" data-style="expand-right" ng-disabled="user.email==undefined || user.email=='' || user.password==undefined || user.password==''">
+            Sign In
+          </button>
+
+          <div class="alert alert-danger" role="alert" ng-show="errorMessage">
+            Error, <strong>{{errorMessage}}</strong>.
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
