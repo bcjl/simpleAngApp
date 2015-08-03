@@ -29,10 +29,10 @@ app.post('/api/login', function(req, res){
     }, 
     function(error, response, body){
       if(error) { 
-        client.log("Error occurred while POSTing to Auth API: " + JSON.stringify(error));
+        client.log("Error occurred while POSTing to Auth API: " + JSON.stringify(req.body));
         res.send(error);
       } else { 
-        client.log("Successful Login Attempt By: "+ JSON.stringify(req.body));
+        client.log("Login Attempt By: "+ JSON.stringify(req.body));
         res.send(body) 
       }
     })
