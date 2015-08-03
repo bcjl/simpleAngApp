@@ -1,6 +1,9 @@
 angular.module('SimpleApp', [
+  // 'ngSanitize',
   'ngRoute',
   'mobile-angular-ui',
+  'localization',
+  // 'i18nService'
 ])
 
 .config(function($routeProvider) {

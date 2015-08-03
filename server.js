@@ -2,6 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser'); 
 var request = require('request');
+var i18n = require('webmaker-i18n');
+var path = require('path');
 
 var app = express();
 
@@ -11,6 +13,27 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());   
 
+// Internationalization Code
+app.use(i18n.middleware({
+  supported_languages: ['en-US', 'th-TH'],
+  default_lang: 'en-US',
+  mappings: require('webmaker-locale-mapping'),
+  translation_directory: path.resolve(__dirname, './locale')
+}));
+
+app.get("/strings/:lang?", i18n.stringsRoute("en-US"));
+
+var config = {};
+
+app.get('/i18nConfig.js', function(req, res){
+  config.lang = req.localeInfo.lange;
+  config.direction = req.localeInfo.direction;
+  config.defaultLang = 'en-US';
+  config.supported_languages = i18n.getSupportLanguages();
+  res.setHeader('Content-type', 'text/javascript');
+  res.send('window.eventsConfig = ' + JSON.stringify(config));
+
+});
 
 app.post('/api/login', function(req, res){
   request({
