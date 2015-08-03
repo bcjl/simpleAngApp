@@ -251,9 +251,6 @@ gulp.task('build', function(done) {
 ====================================*/
 
 gulp.task('default', function(done){
-  var tasks = [];
-
-  // tasks.push('watch');
   
-  seq('build', tasks, done);
+  seq('build', done);
 });
