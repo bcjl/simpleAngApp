@@ -235,19 +235,6 @@ gulp.task('watch', function () {
 });
 
 
-/*===================================================
-=            Starts a Weinre Server                 =
-===================================================*/
-
-// gulp.task('weinre', function() {
-//   if (typeof config.weinre === 'object') {
-//     var weinre = require('./node_modules/weinre/lib/weinre');
-//     weinre.run(config.weinre);
-//   } else {
-//     throw new Error('Weinre is not configured');
-//   }
-// });
-
 
 /*======================================
 =            Build Sequence            =
@@ -266,14 +253,7 @@ gulp.task('build', function(done) {
 gulp.task('default', function(done){
   var tasks = [];
 
-  // if (typeof config.weinre === 'object') {
-  //   tasks.push('weinre');
-  // }
-
-  if (typeof config.server === 'object') {
-    tasks.push('connect');
-  }
-  tasks.push('watch');
+  // tasks.push('watch');
   
   seq('build', tasks, done);
 });
