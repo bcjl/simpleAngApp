@@ -5,19 +5,23 @@ angular.module('SimpleApp', [
 
 .config(function($routeProvider) {
 
-  $routeProvider.when('/login', {
+  $routeProvider
+
+  .when('/login', {
     templateUrl:'login.html',
     controller: 'LoginController'
-  });
+  })
 
-  $routeProvider.when('/', {
+  .when('/', {
     templateUrl:'home.html',
     controller: 'PaymentsController'
-  });
+  })
 
-  $routeProvider.when('/about', {
+  .when('/about', {
     templateUrl:'about.html'
-  });
+  })
+  .otherwise({ redirectTo: '/'});
+  
 })
 
 // Checks before any route change that user is logged in
