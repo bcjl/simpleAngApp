@@ -4,7 +4,6 @@ angular.module('SimpleApp', [
 ])
 
 .config(function($routeProvider) {
-
   $routeProvider
 
   .when('/login', {
@@ -21,12 +20,10 @@ angular.module('SimpleApp', [
     templateUrl:'about.html'
   })
   .otherwise({ redirectTo: '/'});
-  
 })
 
 // Checks before any route change that user is logged in
 .run( function($rootScope, $location){
-
   $rootScope.$on("$routeChangeStart", function(event, next, current){
     //Prevents users from accessing any page besides login if not logged in
     if( $rootScope.loggedIn === false || $rootScope.loggedIn === undefined){

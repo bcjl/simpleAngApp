@@ -1,5 +1,7 @@
 function PaymentsController($scope, userModel){
   $scope.user = userModel.getUser();
+
+  // Stubbed payments info, would eventually replace with server GET
   $scope.payments = [
     { name: "Alan", amount: "1.00", date: "1-1-2015"}, 
     { name: "Bob", amount: "2.00", date: "2-11-2015"},
@@ -20,7 +22,7 @@ function PaymentsController($scope, userModel){
     { name: "Quid", amount: "1.00", date: "6-19-2016"},
     { name: "Rick", amount: "90.20", date: "7-4-2016"},
     { name: "Steve", amount: "1.00", date: "7-23-2016"},
-  ]
+  ];
 
   $scope.recipient = "";
   $scope.amount = 0;

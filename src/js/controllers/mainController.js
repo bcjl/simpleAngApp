@@ -1,6 +1,7 @@
 function MainController($scope, $http, $location, $rootScope, userModel){
   $scope.user = userModel.getUser();
 
+  // Navbar functionality
   $scope.logout = function(){
     $rootScope.loggedIn = false;
 

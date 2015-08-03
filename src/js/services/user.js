@@ -1,4 +1,4 @@
-function userModel(){
+function userModel() {
   var user = {
     email: "",
     password: ""

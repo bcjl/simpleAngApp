@@ -2,7 +2,13 @@
   "name": "simpleapp",
   "version": "0.0.0",
   "main": "server.js",
+  "scripts": {
+    "build": "gulp build",
+    "start": "node server.js"
+  },
   "devDependencies": {
+  },
+  "dependencies": {
     "gulp": "^3.8.1",
     "gulp-connect": "^2.0.5",
     "gulp-ignore": "^1.2.0",
@@ -23,9 +29,7 @@
     "gulp-replace": "^0.4.0",
     "gulp-angular-filesort": "^1.0.1",
     "streamqueue": "^0.1.1",
-    "gulp-rename": "^1.2.0"
-  },
-  "dependencies": {
+    "gulp-rename": "^1.2.0",
     "body-parser": "^1.13.3",
     "express": "^4.13.2",
     "jquery": "^2.1.4",

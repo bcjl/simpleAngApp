@@ -14,7 +14,7 @@ var client = loggly.createClient({
 
 var app = express();
 
-app.use(express.static(__dirname + '/www'));
+app.use(express.static(__dirname + '/dist'));
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));

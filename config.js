@@ -1,7 +1,7 @@
 module.exports = function(config) {
 
   // Output directory
-  config.dest = 'www';
+  config.dest = 'dist';
   
   // Inject cordova script into html
   config.cordova = false;
