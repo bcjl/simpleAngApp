@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "main": "server.js",
   "scripts": {
-    "build": "gulp build",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "gulp build",
   },
   "devDependencies": {
   },
